@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Career Recommendation</title>
+</head>
+<body>
+    <h1>ระบบช่วยตัดสินใจเลือกสายอาชีพ</h1>
+    <form method="POST">
+        <h3>ทักษะที่คุณถนัด (เลือกได้หลายข้อ):</h3>
+        <input type="checkbox" name="skills" value="Python"> Python 
+        <input type="checkbox" name="skills" value="HTML"> HTML/CSS 
+        <input type="checkbox" name="skills" value="SQL"> SQL/Database <br>
+        <input type="checkbox" name="skills" value="Network"> Network & Security 
+        <input type="checkbox" name="skills" value="Logic"> Logic/Algorithm <br>
+        <input type="checkbox" name="skills" value="Design"> Graphic Design 
+        <input type="checkbox" name="skills" value="English"> English Communication <br>
+        <input type="checkbox" name="skills" value="Content"> Content Creation
+        <input type="checkbox" name="skills" value="Math"> Mathematics
+    </div>
+
+        <h3>ความสนใจหลัก:</h3>
+        <select name="interest">
+            <option value="Data">การวิเคราะห์ข้อมูล (Data)</option>
+            <option value="AI">ปัญญาประดิษฐ์ (AI)</option>
+            <option value="Design">การออกแบบ (Design)</option>
+            <option value="Business">ธุรกิจและการตลาด (Business)</option>
+            <option value="Security">ความปลอดภัยไซเบอร์ (Security)</option>
+            <option value="Gaming">การพัฒนาเกม (Gaming)</option>
+        </select>
+        <br><br>
+        <button type="submit">วิเคราะห์อาชีพ</button>
+    </form>
+
+    <hr>
+
+    {% if recommendations %}
+        <h2>สายอาชีพที่เหมาะสมสำหรับคุณ (3-5 อันดับ):</h2>
+        <ul>
+        {% for job in recommendations %}
+            <li><strong>{{ job.name }}</strong> (คะแนนความเหมาะสม: {{ job.score }})</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
