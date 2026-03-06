@@ -33,7 +33,15 @@ with col2:
 
 user_skills = []
 if s1: user_skills.append("Python")
-# ... เพิ่มเงื่อนไขจนครบทุกทักษะ ...
+if s2: user_skills.append("HTML")
+if s3: user_skills.append("SQL")
+if s4: user_skills.append("Network")
+if s5: user_skills.append("Logic")
+if s6: user_skills.append("Design")
+if s7: user_skills.append("English")
+if s8: user_skills.append("Content")
+if s9: user_skills.append("Math")
+
 
 st.subheader("ความสนใจหลัก:")
 user_interest = st.selectbox("เลือกความสนใจของคุณ", 
@@ -59,3 +67,4 @@ if st.button("วิเคราะห์อาชีพ"):
     st.subheader("สายอาชีพที่เหมาะสมสำหรับคุณ:")
     for job in recommendations:
         st.write(f"**{job['name']}** (คะแนนความเหมาะสม: {job['score']})")
+
